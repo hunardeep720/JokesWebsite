@@ -1,0 +1,44 @@
+@model JokesWebsite.Models.Joke
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/jokes.css"/>
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Create</title>
+</head>
+<body>
+    <div class="jokes-container">
+        <h4 class="heading">Add a New Joke</h4>
+        <hr />
+        <form asp-action="Create" method="post">
+            <div class="form-group">
+                <label asp-for="JokeQuestion" class="control-label"></label>
+                <input asp-for="JokeQuestion" class="form-control" required />
+                <span asp-validation-for="JokeQuestion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JokeAnswer" class="control-label"></label>
+                <input asp-for="JokeAnswer" class="form-control" required />
+                <span asp-validation-for="JokeAnswer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary joke-btn">Create</button>
+            </div>
+        </form>
+
+    </div>
+
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+
+</body>
+</html>
